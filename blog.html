@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Read Our Blog</title>
 </head>
+
 <body id="home">
   <header class="hero blog">
-    <div id="navbar" class="navbar">
+    <div id="navbar" class="navbar top">
       <h1 class="logo">
         <span class="text-primary"><i class="fas fa-book-open"></i> Edge</span>Ledger
       </h1>
@@ -44,7 +46,9 @@
             <p class="meta">
               <i class="fas fa-user"></i> Posted by <strong>John Doe</strong> | April 19 2020
             </p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quae ducimus necessitatibus recusandae pariatur quos odio, accusantium inventore error, sint itaque. Dolore, aperiam hic harum repellat enim accusantium consectetur officia.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quae ducimus necessitatibus recusandae
+              pariatur quos odio, accusantium inventore error, sint itaque. Dolore, aperiam hic harum repellat enim
+              accusantium consectetur officia.</p>
             <a href="post.html" class="btn btn-dark">
               <i class="fas fa-chevron"></i>
               Read More
@@ -67,7 +71,9 @@
             <p class="meta">
               <i class="fas fa-user"></i> Posted by <strong>Jane Doe</strong> | April 19 2020
             </p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quae ducimus necessitatibus recusandae pariatur quos odio, accusantium inventore error, sint itaque. Dolore, aperiam hic harum repellat enim accusantium consectetur officia.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quae ducimus necessitatibus recusandae
+              pariatur quos odio, accusantium inventore error, sint itaque. Dolore, aperiam hic harum repellat enim
+              accusantium consectetur officia.</p>
             <a href="post.html" class="btn btn-light">
               <i class="fas fa-chevron"></i>
               Read More
@@ -90,7 +96,9 @@
             <p class="meta">
               <i class="fas fa-user"></i> Posted by <strong>John Doe</strong> | April 23 2020
             </p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quae ducimus necessitatibus recusandae pariatur quos odio, accusantium inventore error, sint itaque. Dolore, aperiam hic harum repellat enim accusantium consectetur officia.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quae ducimus necessitatibus recusandae
+              pariatur quos odio, accusantium inventore error, sint itaque. Dolore, aperiam hic harum repellat enim
+              accusantium consectetur officia.</p>
             <a href="post.html" class="btn btn-light">
               <i class="fas fa-chevron"></i>
               Read More
@@ -110,5 +118,27 @@
     </div>
     <p>Copyright &copy; 2020 - EdgeLedger</p>
   </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar')
+    let scrolled = false;
+
+    window.onscroll = function () {
+      if (window.pageYOffset > 100) {
+        navbar.classList.remove('top')
+        if (!scrolled) {
+          navbar.style.transform = 'translateY(-70px)';
+        }
+        setTimeout(function () {
+          navbar.style.transform = 'translateY(0px)';
+          scrolled = true;
+        }, 200)
+      } else {
+        navbar.classList.add('top');
+        scrolled = false;
+      }
+    }
+  </script>
 </body>
+
 </html>
